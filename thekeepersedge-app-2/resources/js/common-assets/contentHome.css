@@ -1,0 +1,251 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.aurora-wrapper {
+  position: fixed; /* Fix it to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Push it behind other elements */
+  overflow: hidden; /* Ensure no scrollbars appear */
+}
+
+.home-page {
+  position: relative; /* Ensure content is layered above */
+  z-index: 1;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(90deg, black, #bc9c22);
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sections */
+  padding: 60px 20px;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.hero-left {
+  flex: 1;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 120px; /* Ensure text is aligned to the left */
+}
+
+@font-face {
+  font-family: 'Kelvinch';
+  src: url('../../assets/kelvinch.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hero h1 {
+  font-family: "Kelvinch", sans-serif;
+  font-size: 70px;
+  text-align: left;
+  margin-bottom: 20px;
+  color: white;
+}
+
+
+.hero p {
+  font-family: "Kelvinch", sans-serif;
+  font-size: 23px;
+  text-align: left;
+  margin-bottom: 12px;
+  padding-bottom: 30px;
+}
+
+
+
+.book-button {
+  border-radius: 10px;
+  padding: 20px 30px;
+  border: none;
+  background-color: #bc9c22;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.book-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* Review Section Styles */
+.review-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  gap: 20px; /* Space between cards */
+  padding: 0 20px;
+}
+
+.review-card {
+  margin-top: 70px;
+  background-color: transparent;
+
+
+  transition: transform 0.3s ease;
+}
+
+.review-card p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.review-card span {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #bc9c22;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+}
+
+/* Social Media Section */
+.social-media {
+  text-align: center;
+  padding: 40px 20px;
+}
+.instalogo{
+  color: black;
+}
+.social-media h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  font-size: 40px;
+  color: #bc9c22;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* TikTok Videos Section */
+.tiktok-videos {
+  text-align: center;
+  padding: 20px;
+}
+
+.tiktok-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between TikTok embeds */
+  margin-top: 20px;
+}
+
+.tiktok-embed-wrapper {
+  flex: 1;
+  max-width: 325px;
+  max-height: 800px; /* Adjust based on your preference */
+  overflow: hidden;
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.tiktok-embed {
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+  border: none; /* Remove iframe border */
+}
+
+.tiktok-embed section {
+  display: none; /* Hide the text and links */
+}
+
+/* Optional: Adjust the section title to look nicer */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color:  white;
+}
+.home-page .text-2xl span {
+  font-family: "Kelvinch";
+  font-size: 70px; /* Adjust the size as needed */
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .book-button{
+    left: 0;
+  }
+  .aurora-wrapper {
+    position: fixed; /* Fix it to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Push it behind other elements */
+    overflow: hidden; /* Ensure no scrollbars appear */
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-left {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .review-container {
+    grid-template-columns: 1fr; /* Switch to 1 column on mobile */
+    gap: 15px;
+    padding: 0;
+  }
+
+  .review-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .review-card p {
+    font-size: 16px;
+  }
+
+  .review-card span {
+    font-size: 14px;
+  }
+
+  .shorts-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .shorts-container iframe {
+    width: 100%;
+    height: 169px;
+  }
+  .tiktok-videos{
+    display: none;
+  }
+}
